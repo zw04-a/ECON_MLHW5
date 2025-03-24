@@ -297,7 +297,8 @@
 #-------------------------------------
 #----- Q2.3. Run CV loop
 #-------------------------------------   
-  formula1 <- deparse(formula1)
+  #formula1 <- deparse(formula1)
+  formula1 <- Reduce(paste, deparse(formula1)) # for long formula
   for (i in 1:5) { # The loop cycles through polynomials
     # Adjust the formula
     formula.cv <- paste0(formula1 , " + poly(age, degree =", i, ", raw = TRUE)")
